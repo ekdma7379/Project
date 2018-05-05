@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/wentHotel.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascript/wentHotel.js"></script>
+</head>
+
+<body>
+    <% include ../layout/main/navbar %>
+    <div id="side_bar" class="row-offcanvas row-offcanvas-left">
+        <% include ../layout/main/sidebar %>
+        <div id="main">
+            <br>
+            <div class="">
+                <!-- left column -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="text-center">
+                            <% if(user.profImg) { %>
+                                <img src="<%= user.profImg %>" class="img-circle img-thumbnail" width="250" hegiht="250">
+                            <% } else { %>
+                                <img src="/images/default.png" class="img-circle img-thumbnail" width="250" height="250">
+                            <% } %>
+                    </div>
+                </div>
+                <!-- edit form column -->
+                <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+                    <h3>상세 정보 페이지</h3>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">이메일</label>
+                            <div class="col-lg-3">
+                                <br>
+                                <%= user.email %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">이름</label>
+                            <div class="col-lg-3">
+                                <br>
+                                <%= user.name %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">사는 지역</label>
+                            <div class="col-lg-3">
+                                <br>
+                                <%= user.location %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">성별</label>
+                            <div class="col-lg-3">
+                                <br>
+                                <%= user.sex %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">나이</label>
+                            <div class="col-lg-3">
+                                <br>
+                                <%= user.age %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">선호장르</label>
+                            <div class="col-lg-3">
+                                    <br>
+                                    <%= user.part %>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+
+            <br>
+        </div>
+    </div>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<div class="col-md-12">
+    <div id="tab-card" class="card">
+        <!-- 카테고리 탭 -->
+        <ul class="nav nav-tabs" role="tablist" id="tabUl">
+
+            <li role="presentation" class="active">
+                <a id="tagButton" href="#" type="button" role="tab" data-toggle="tab">
+                    도서목록
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- 웹툰 탭 -->
+        <div class="tab-content">
+            <div class="row">
+            <% if(books) { %>
+
+                <% for(var i=0; i<books.length; i++) {%>
+
+                    <div class="col-xs-3">
+                        <div class="card" id="webtoon_card">
+                            <a class="img-card" href="/hotel/<%= books[i]._id %>">
+                                    <img src="<%= books[i].image %>"/>
+                                </a>
+                            <div class="card-content">
+                                <h4 class="card-title">
+                                        <a href="#">
+                                            <%= books[i].bookname %>
+                                        </a>
+                                    </h4>
+                                <div class="">
+                                    <%= books[i].author %>
+                                </div>
+                            </div>
+                            <div class="card-read-more">
+                                <a class="btn btn-link btn-block" href="/hotel/<%= books[i]._id %>">
+                                        더 보기
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
